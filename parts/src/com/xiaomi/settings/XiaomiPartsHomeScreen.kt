@@ -30,7 +30,6 @@ import com.xiaomi.settings.utils.PartsToast
 fun XiaomiPartsHomeScreen(
     onNavigateToDisplay: () -> Unit,
     onNavigateToResolution: () -> Unit,
-    onNavigateToCpu: () -> Unit,
     onNavigateToBattery: () -> Unit,
     onNavigateToMemory: () -> Unit,
     onNavigateToThermal: () -> Unit,
@@ -65,12 +64,6 @@ fun XiaomiPartsHomeScreen(
 
             item(key = "performance") {
                 PartsPreferenceGroup(title = stringResource(R.string.performance_category)) {
-                    PartsPreference(
-                        icon = Icons.Filled.Memory,
-                        title = stringResource(R.string.cpu_control_title),
-                        summary = stringResource(R.string.cpu_control_summary),
-                        onClick = onNavigateToCpu,
-                    )
                     PartsPreference(
                         icon = ImageVector.vectorResource(R.drawable.ic_thermal_settings),
                         title = stringResource(R.string.thermal_title),

@@ -118,11 +118,7 @@ class ThermalService : Service() {
         dlog(TAG, "onDestroy")
         destroyed = true
         mainHandler.removeCallbacksAndMessages(null)
-        if (thermalUtils.throttlingDisabled) {
-            thermalUtils.setNoLimitsThermalProfile()
-        } else {
-            thermalUtils.setDefaultThermalProfile()
-        }
+        thermalUtils.setDefaultThermalProfile()
         chargingMonitor.stop()
         unregisterReceiver(screenReceiver)
         runCatching { ActivityTaskManager.getService().unregisterTaskStackListener(taskListener) }

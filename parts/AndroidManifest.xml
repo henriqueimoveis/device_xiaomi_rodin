@@ -48,10 +48,6 @@
             android:name=".touchsampling.TouchSamplingService"
             android:exported="false" />
 
-        <service
-            android:name=".cpu.CpuControlService"
-            android:exported="false" />
-
         <activity
             android:name=".XiaomiPartsActivity"
             android:label="@string/xiaomi_parts_title"

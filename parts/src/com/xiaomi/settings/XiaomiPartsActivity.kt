@@ -18,7 +18,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.xiaomi.settings.battery.BatteryStatusScreen
-import com.xiaomi.settings.cpu.CpuControlScreen
 import com.xiaomi.settings.display.DisplayColoursScreen
 import com.xiaomi.settings.display.ScreenResolutionScreen
 import com.xiaomi.settings.monitor.MemoryMonitorScreen
@@ -67,7 +66,6 @@ private fun PartsNavHost() {
             XiaomiPartsHomeScreen(
                 onNavigateToDisplay     = { nav.navigate("displayColours") },
                 onNavigateToResolution  = { nav.navigate("screenResolution") },
-                onNavigateToCpu         = { nav.navigate("cpuControl") },
                 onNavigateToBattery     = { nav.navigate("batteryStatus") },
                 onNavigateToMemory      = { nav.navigate("memory") },
                 onNavigateToThermal     = { nav.navigate("thermal") },
@@ -76,7 +74,6 @@ private fun PartsNavHost() {
         }
         composable("displayColours")    { DisplayColoursScreen { nav.popBackStack() } }
         composable("screenResolution")  { ScreenResolutionScreen { nav.popBackStack() } }
-        composable("cpuControl")        { CpuControlScreen { nav.popBackStack() } }
         composable("batteryStatus")     { BatteryStatusScreen { nav.popBackStack() } }
         composable("memory")            { MemoryMonitorScreen { nav.popBackStack() } }
         composable("thermal")           { ThermalManagementScreen { nav.popBackStack() } }

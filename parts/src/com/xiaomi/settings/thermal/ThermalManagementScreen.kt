@@ -150,7 +150,6 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
     val scope        = rememberCoroutineScope()
 
     var thermalEnabled   by remember { mutableStateOf(thermalUtils.enabled) }
-    var throttlingDisabled by remember { mutableStateOf(thermalUtils.throttlingDisabled) }
     var appList          by remember { mutableStateOf<List<AppThermalEntry>>(emptyList()) }
     var isCharging       by remember { mutableStateOf(readIsCharging(context)) }
     var showResetDialog  by remember { mutableStateOf(false) }
@@ -158,7 +157,7 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
     var showAddSheet     by remember { mutableStateOf(false) }
     var pendingNewApp    by remember { mutableStateOf<InstalledAppEntry?>(null) }
 
-    val controlsEnabled = thermalEnabled && !isCharging && !throttlingDisabled
+    val controlsEnabled = thermalEnabled && !isCharging
     val addSheetState   = rememberModalBottomSheetState(skipPartiallyExpanded = true)
 
     DisposableEffect(Unit) {
@@ -203,7 +202,7 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
         ) {
             item(key = "charging-banner") {
                 AnimatedVisibility(
-                    visible = isCharging && !throttlingDisabled,
+                    visible = isCharging,
                     enter   = expandVertically(animationSpec = Motion.defaultEffectsSpec()) + fadeIn(),
                     exit    = shrinkVertically(animationSpec = Motion.defaultEffectsSpec()) + fadeOut(),
                 ) {
@@ -221,7 +220,7 @@ fun ThermalManagementScreen(onBack: () -> Unit) {
                     PartsSwitchPreference(
                         title = stringResource(R.string.thermal_enable_title),
                         checked = thermalEnabled,
-                        enabled = !isCharging && !throttlingDisabled,
+                        enabled = !isCharging,
                         onCheckedChange = { checked ->
                             thermalEnabled = checked
                             thermalUtils.enabled = checked

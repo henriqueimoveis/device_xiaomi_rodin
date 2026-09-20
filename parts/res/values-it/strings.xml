@@ -19,40 +19,6 @@
     <string name="navigate_up">Torna indietro</string>
 
     <!-- CPU -->
-    <string name="cpu_control_title">Controllo CPU</string>
-    <string name="cpu_control_summary">Profili prestazioni, frequenze e core</string>
-    <string name="cpu_control_description">I profili si adattano alle frequenze esposte dal kernel. La protezione termica di Android rimane attiva in ogni modalità.</string>
-    <string name="cpu_profiles_category">Profilo prestazioni</string>
-    <string name="cpu_profile_economy">Economica</string>
-    <string name="cpu_profile_economy_summary">Solo core efficienti e frequenze limitate per prolungare la durata della batteria</string>
-    <string name="cpu_profile_normal">Normale</string>
-    <string name="cpu_profile_normal_summary">Tutti i core attivi con il normale intervallo adattivo del kernel</string>
-    <string name="cpu_profile_boost">Boost</string>
-    <string name="cpu_profile_boost_summary">Tutti i core attivi con una frequenza minima più elevata</string>
-    <string name="cpu_profile_extreme">Estrema</string>
-    <string name="cpu_profile_extreme_summary">Blocca ogni cluster alla frequenza massima</string>
-    <string name="cpu_profile_custom">Personalizzato</string>
-    <string name="cpu_profile_custom_summary">Configurazione manuale di frequenze e core</string>
-    <string name="cpu_extreme_warning_title">Consumo elevato</string>
-    <string name="cpu_extreme_warning">La modalità Estrema genera molto più calore e consuma più batteria. La limitazione termica non viene mai disattivata.</string>
-    <string name="cpu_frequencies_category">Limiti manuali delle frequenze</string>
-    <string name="cpu_cores_category">Core CPU</string>
-    <string name="cpu_efficiency_cluster">Cluster efficienza</string>
-    <string name="cpu_performance_cluster">Cluster prestazioni</string>
-    <string name="cpu_prime_cluster">Cluster prime</string>
-    <string name="cpu_cluster">Cluster %1$d</string>
-    <string name="cpu_frequency_range">%1$s – %2$s</string>
-    <string name="cpu_frequency_dialog_title">Frequenze %1$s</string>
-    <string name="cpu_min_frequency">Minima: %1$s</string>
-    <string name="cpu_max_frequency">Massima: %1$s</string>
-    <string name="cpu_core">CPU %1$d</string>
-    <string name="cpu_core_online">Attivo</string>
-    <string name="cpu_core_offline">Disattivato</string>
-    <string name="cpu_core_required">Core di avvio — sempre attivo</string>
-    <string name="cpu_apply">Applica</string>
-    <string name="cpu_refresh">Aggiorna stato CPU</string>
-    <string name="cpu_apply_failed">Non è stato possibile applicare alcune impostazioni CPU</string>
-    <string name="cpu_not_supported">Il kernel non espone il controllo delle frequenze CPU</string>
 
     <!-- Batteria -->
     <string name="battery_status_title">Stato batteria</string>
@@ -144,12 +110,6 @@
     <string name="thermal_summary">Prestazioni e temperatura per app</string>
     <string name="thermal_enable_title">Profili termici</string>
     <string name="thermal_enable_summary">Applica i profili termici alle singole app e durante la ricarica</string>
-    <string name="thermal_safety_label">Esclusione di sicurezza</string>
-    <string name="thermal_disable_throttling_title">Disattiva limitazione termica</string>
-    <string name="thermal_disable_throttling_summary">Usa il profilo vendor senza limiti finché questa opzione non viene disattivata</string>
-    <string name="thermal_disable_warning_title">Disattivare la protezione termica?</string>
-    <string name="thermal_disable_warning_body">Il dispositivo può surriscaldarsi, diventare instabile, danneggiare la batteria o spegnersi. Le protezioni di emergenza del kernel potrebbero rimanere attive. Usa questa opzione soltanto per test brevi e non lasciare mai il dispositivo incustodito.</string>
-    <string name="thermal_disable_confirm">Disattiva comunque</string>
     <string name="thermal_global_label">Profilo globale</string>
     <string name="thermal_global_profile_title">Profilo attivo</string>
     <string name="thermal_per_app_label">Profili per app</string>

@@ -14,7 +14,6 @@ import android.os.UserHandle
 import android.util.Log
 import android.view.Display
 import android.view.Display.HdrCapabilities
-import com.xiaomi.settings.cpu.CpuControlService
 import com.xiaomi.settings.display.ColorService
 import com.xiaomi.settings.thermal.ThermalUtils
 import com.xiaomi.settings.touchsampling.TouchSamplingService
@@ -60,11 +59,6 @@ class BootCompletedReceiver : BroadcastReceiver() {
         runCatching {
             ThermalUtils.getInstance(context.applicationContext).restoreStateAtBoot()
         }.onFailure { e -> Log.e(TAG, "Failed to start ThermalService", e) }
-
-        // CPU profile, frequency limits, and core availability
-        runCatching {
-            CpuControlService.applySavedConfiguration(context)
-        }.onFailure { e -> Log.e(TAG, "Failed to apply CPU configuration", e) }
 
         // Force-enable all HDR types (Dolby Vision, HDR10, HLG, HDR10+)
         runCatching {
