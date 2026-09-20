@@ -129,7 +129,6 @@ class ThermalUtils private constructor(private val context: Context) {
             val appInfo = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
             return when {
                 isYuanshenApp(packageName)        -> ThermalState.YUANSHEN
-                isBenchmarkApp(packageName)       -> ThermalState.NOLIMITS
                 isCompetitiveGameApp(packageName) -> ThermalState.GAMING_COMPETITIVE
                 isHeavyGameApp(packageName)       -> ThermalState.GAMING_HEAVY
                 isGameApp(appInfo)                -> ThermalState.GAMING
@@ -151,9 +150,6 @@ class ThermalUtils private constructor(private val context: Context) {
 
     private fun isYuanshenApp(packageName: String): Boolean =
         YUANSHEN_PKGS.any { packageName.startsWith(it) }
-
-    private fun isBenchmarkApp(packageName: String): Boolean =
-        BENCHMARK_PKGS.any { packageName.startsWith(it) }
 
     private fun isCompetitiveGameApp(packageName: String): Boolean =
         COMPETITIVE_GAME_PKGS.any { packageName.startsWith(it) }
@@ -228,7 +224,7 @@ class ThermalUtils private constructor(private val context: Context) {
      * sconfig → thermal conf mapping (real confs available on device):
      *   0   thermal-normal.conf        DEFAULT
      *   5   thermal-phone.conf         DIALER
-     *   6   thermal-nolimits.conf      NOLIMITS (benchmarks)
+     *   6   thermal-nolimits.conf      NOLIMITS
      *   10  thermal-navigation.conf    NAVIGATION
      *   11  thermal-video.conf         VIDEO (video, music, social)
      *   14  thermal-videochat.conf     VIDEO_CALL
@@ -276,13 +272,6 @@ class ThermalUtils private constructor(private val context: Context) {
             "com.HoYoverse.Nap",
             "com.kurogame.wutheringwaves",
             "com.kurogame.gplay.punishing.grayraven.en"
-        )
-        private val BENCHMARK_PKGS = listOf(
-            "com.antutu",
-            "com.texts.throttlebench",
-            "com.futuremark",
-            "com.primatelabs",
-            "com.passmark"
         )
         private val COMPETITIVE_GAME_PKGS = listOf(
             "com.tencent.ig",
