@@ -19,7 +19,6 @@
     <uses-permission android:name="android.permission.BATTERY_STATS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".XiaomiPartsApp"

@@ -14,15 +14,7 @@
     <privapp-permissions package="com.xiaomi.settings">
 
         <!-- ── Battery / Charging ───────────────────────────────────────── -->
-        <!--
-             BATTERY_STATS:
-               Required by ChargingMonitor for direct BatteryManager.isCharging()
-               calls and registerReceiver(null, ACTION_BATTERY_CHANGED) sticky
-               reads. android.uid.system holds this implicitly at runtime, but
-               the privapp whitelist validator on user/userdebug ROM builds
-               requires an explicit entry here or it logs a fatal warning and
-               the runtime grant can be silently withheld on strict builds.
-        -->
+        <!-- Battery statistics used by the performance monitor. -->
         <permission name="android.permission.BATTERY_STATS"/>
 
         <!-- Used by the memory screen to stop a user-selected background app. -->
