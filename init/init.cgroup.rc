@@ -100,8 +100,5 @@ on property:sys.boot_completed=1
     # start cpuqos
     write /sys/devices/system/cpu/cpuqos/cpuqos_boot_complete 1
 
-    # Set thermal mode to mgame
-    write /sys/devices/virtual/thermal/thermal_message/sconfig 19
-
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
