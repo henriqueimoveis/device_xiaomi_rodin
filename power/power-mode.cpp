@@ -129,7 +129,9 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
             return false;
           }
 
-          return true;
+          // Touch configuration supplements the generic GAME power hint.
+          // Let the Power HAL also apply or end its libperfmgr actions.
+          return false;
         }
         default:
             return false;
