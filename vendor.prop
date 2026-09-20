@@ -92,9 +92,7 @@ persist.vendor.camera3.pipeline.bufnum.min.low_ram.rsso=5
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rrzo=5
 persist.vendor.mifaced.fastlaunch=1
 ro.camera.disableHeicUltraHDR=true
-ro.camerax.extensions.enabled=true
 ro.usb.uvc.enabled=true
-ro.vendor.dynamiccamera.ability_level=2
 ro.vendor.afbc.enable=3
 ro.vendor.hdr10plus.enable=1
 ro.vendor.mtk_camera_app_version=3
@@ -128,7 +126,6 @@ debug.sf.earlyGl.sf.duration=12300000
 debug.sf.hwc.min.duration=2000000
 debug.sf.late.app.duration=11600000
 debug.sf.late.sf.duration=12300000
-debug.sf.enable_gl_backpressure=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.set_idle_timer_ms=1100
 debug.sf.treat_170m_as_sRGB=1
@@ -288,7 +285,6 @@ persist.vendor.sys.pq.disp_gamma_silky_brightness_by_hwc=1
 persist.vendor.sys.pq.mtk_disp_clarity_support=0
 
 persist.vendor.sys.pq.oddmr_dbi_support=0
-ro.vendor.hdr10plus.enable=1
 ro.vendor.mml.mtk_mml_support=1
 ro.vendor.mtk_airegionpq_adaptive_support=1
 ro.vendor.mtk_aod_support=1
@@ -418,7 +414,6 @@ vendor.connsys.driver.ready=no
 ro.vendor.mtk.sensor.support=yes
 ro.vendor.sensors.xiaomi.double_tap=true
 ro.vendor.sensors.xiaomi.single_tap=true
-ro.vendor.sensors.xiaomi.udfps=true
 ro.vendor.audio.us.proximity=true
 ro.vendor.audio.us.proximity_waitfornegative_feature=true
 
@@ -441,11 +436,6 @@ ro.vendor.wifi.sap.interface=ap0
 
 # Xiaomi display features
 ro.vendor.displayfeature.dump=true
-
-# LMK
-ro.lmk.filecache_min_kb=153600
-ro.lmk.kill_timeout_ms=50
-ro.lmk.stall_limit_critical=40
 
 # ZRAM writeback
 ro.zram.first_wb_delay_mins=1440

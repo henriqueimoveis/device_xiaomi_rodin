@@ -41,9 +41,6 @@ persist.vendor.sensor.onetrack=true
 persist.vendor.sensor.maxbrightness=2600
 persist.vendor.sensor.powbrightness=10
 
-# Thermal
-persist.vendor.tracking.dfs=true
-
 # Xiaomi display features
 persist.vendor.dc_backlight.enable=false
 ro.vendor.cabc.enable=false

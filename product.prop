@@ -37,7 +37,6 @@ ro.product.marketname=POCO X7 Pro
 # Radio
 ro.vendor.radio.5g=3
 ro.vendor.radio.features_common=2
-persist.vendor.vonr_setting_support=1
 ro.vendor.mtk_gwsd_support=1
 ro.vendor.vodata_support=1
 persist.vendor.mtk.vodata.data_mode=1
@@ -48,6 +47,3 @@ remote_provisioning.hostname=remoteprovisioning.googleapis.com
 
 # Voice assitant
 ro.opa.eligible_device=true
-
-# zRAM
-ro.zram_backing_device_min_free_mb=1536
