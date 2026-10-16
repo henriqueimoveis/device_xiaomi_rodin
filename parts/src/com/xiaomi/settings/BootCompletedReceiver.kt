@@ -10,6 +10,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.hardware.display.DisplayManager
+import android.media.AudioManager
 import android.os.UserHandle
 import android.util.Log
 import android.view.Display
@@ -34,7 +35,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
 
     /**
      * Called early at locked-boot — starts all background services so display,
-     * thermal, and touch settings are applied before the user sees the lock screen.
+     * thermal, touch, and audio settings are applied before the user sees the lock screen.
      * Each service start is wrapped in runCatching to prevent a single failure
      * from stopping the remaining services from starting.
      */
@@ -73,5 +74,12 @@ class BootCompletedReceiver : BroadcastReceiver() {
                     ),
                 )
         }.onFailure { e -> Log.e(TAG, "Failed to override HDR types", e) }
+
+        // Disable background audio hardening. It mutes media apps that play
+        // before promoting their service to foreground, like Spotify does.
+        runCatching {
+            context.getSystemService(AudioManager::class.java)
+                ?.setHardeningOverride(AudioManager.HARDENING_DISABLE)
+        }.onFailure { e -> Log.e(TAG, "Failed to disable audio hardening", e) }
     }
 }

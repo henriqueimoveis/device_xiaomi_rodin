@@ -72,5 +72,14 @@
         -->
         <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
 
+        <!-- ── Audio ───────────────────────────────────────────────────── -->
+        <!--
+             MODIFY_AUDIO_SETTINGS_PRIVILEGED:
+               Required by BootCompletedReceiver to call
+               AudioManager.setHardeningOverride(), which disables the
+               background playback mute from Android 17 audio hardening.
+        -->
+        <permission name="android.permission.MODIFY_AUDIO_SETTINGS_PRIVILEGED"/>
+
     </privapp-permissions>
 </permissions>
